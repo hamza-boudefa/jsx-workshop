@@ -1,23 +1,7 @@
-.img{
-  width: 200px;
-}
-
-.App{
-  border: solid ;
-  width: 200px;
+.todo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.name{
-  font-size: 25px;
-  font-weight: 600;
-}
-
-#price ,.name , .desc{
-  text-align: center;
-  background-color: black;
-  color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  align-items: center;
+  gap: 10px;
 }

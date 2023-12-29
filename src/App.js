@@ -1,15 +1,22 @@
+import { useState } from 'react';
 import './App.css';
-import ProductDesc from './components/ProductDesc';
-import ProductImage from './components/ProductImage';
-import ProductName from './components/ProductName';
-import ProductPrice from './components/ProductPrice';
+import AddTodo from './components/AddTodo';
+import Todo from './components/Todo';
+import {Data} from './Data'
+
 function App() {
+  const [todos, setTodos] = useState(Data)
+
+  const addTodoFunction=(newTodo)=>{
+    setTodos([...todos,{text:newTodo}])
+  }
+
+
+
   return (
     <div className="App">
-    <ProductImage/>
-    <ProductName/>
-    <ProductPrice/>
-    <ProductDesc/>
+    <AddTodo addTodoFunction={addTodoFunction} />
+    <Todo Data={todos} />
     </div>
   );
 }
