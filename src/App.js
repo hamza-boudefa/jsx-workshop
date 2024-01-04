@@ -1,22 +1,31 @@
 import { useState } from 'react';
 import './App.css';
-import AddTodo from './components/AddTodo';
-import Todo from './components/Todo';
-import {Data} from './Data'
+import Movies from './components/Movies';
+import { Data } from './Data';
+import MovieList from './components/MovieList';
+import AddMovie from './components/AddMovie';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
-  const [todos, setTodos] = useState(Data)
 
-  const addTodoFunction=(newTodo)=>{
-    setTodos([...todos,{text:newTodo}])
+  const [aflem, setAflem] = useState(Data)
+  const add=(newMovie)=>{
+    setAflem([...aflem,newMovie])
   }
-
-
-
+const [search, setSearch] = useState("")
+  const getSearch=(liktebtou)=>{
+setSearch(liktebtou)
+  }
+  const [rate, setRate] = useState("")
+  const getRate=(rate)=>{
+setRate(rate)
+  }
+  console.log(rate)
   return (
     <div className="App">
-    <AddTodo addTodoFunction={addTodoFunction} />
-    <Todo Data={todos} />
+    <NavigationBar getSearch={getSearch} getRate={getRate} />
+        <AddMovie add={add} />
+    <MovieList aflem={aflem} search={search} rate={rate}  />
     </div>
   );
 }
