@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 import ReactStars from 'react-stars'
 
 const Movies = ({film}) => {
@@ -9,6 +10,9 @@ const Movies = ({film}) => {
       <Card.Img variant="top" src={film.posterUrl} style={{height:"400px"}} />
       <Card.Body>
         <Card.Title> {film.title} </Card.Title>
+        <LinkContainer to={`/movie/${film.id}`} >
+        <Button variant="primary">Trailer</Button>
+</LinkContainer>
         <Card.Text style={{overflowY:"scroll", height:"90px"}} >
          {film.description}
         </Card.Text>
@@ -20,7 +24,6 @@ const Movies = ({film}) => {
   size={24}
   color2={'#ffd700'} />
    
-        {/* <Button variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>
     

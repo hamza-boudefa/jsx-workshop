@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, Nav, NavDropdown, Navbar } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { Link } from 'react-router-dom'
 import ReactStars from 'react-stars'
 
 const NavigationBar = ({getSearch,getRate}) => {
@@ -19,6 +21,12 @@ const NavigationBar = ({getSearch,getRate}) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+          <LinkContainer to={'/'} >
+          <Nav.Link >Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={'/MovieList'} >
+          <Nav.Link >Movie List</Nav.Link>
+          </LinkContainer>
           </Nav>
           <ReactStars
   count={5}
